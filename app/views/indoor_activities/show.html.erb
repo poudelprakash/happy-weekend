@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @indoor_activity.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @indoor_activity.description %>
+</p>
+
+<p>
+  <strong>Release date:</strong>
+  <%= @indoor_activity.release_date %>
+</p>
+
+<%= link_to 'Edit', edit_indoor_activity_path(@indoor_activity) %> |
+<%= link_to 'Back', indoor_activities_path %>

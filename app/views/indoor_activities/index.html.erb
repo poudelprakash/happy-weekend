@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Indoor Activities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Release date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @indoor_activities.each do |indoor_activity| %>
+      <tr>
+        <td><%= indoor_activity.name %></td>
+        <td><%= indoor_activity.description %></td>
+        <td><%= indoor_activity.release_date %></td>
+        <td><%= link_to 'Show', indoor_activity %></td>
+        <td><%= link_to 'Edit', edit_indoor_activity_path(indoor_activity) %></td>
+        <td><%= link_to 'Destroy', indoor_activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Indoor activity', new_indoor_activity_path %>
