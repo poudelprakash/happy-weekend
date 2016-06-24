@@ -24,3 +24,5 @@ alchemist = IndoorActivity.create(name: "Alchemist",
 
 alchemist.categories << books
 alchemist.audiences << single_audience
+
+Event.create(name: "Hackathon", description:'hackathon', audience_id: single_audience.id, category_id: sports.id, starts_at: DateTime.now, ends_at: DateTime.now + 1.day)

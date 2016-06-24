@@ -11,8 +11,8 @@
       <th>Category</th>
       <th>Latitude</th>
       <th>Longitude</th>
-      <th>Date</th>
-      <th>Continuous</th>
+      <th>Starts at</th>
+      <th>Ends at</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,8 +26,8 @@
         <td><%= event.category %></td>
         <td><%= event.latitude %></td>
         <td><%= event.longitude %></td>
-        <td><%= event.date %></td>
-        <td><%= event.continuous %></td>
+        <td><%= event.starts_at %></td>
+        <td><%= event.ends_at %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>

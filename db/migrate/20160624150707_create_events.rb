@@ -7,8 +7,8 @@ class CreateEvents < ActiveRecord::Migration
       t.references :category, index: true, foreign_key: true
       t.float :latitude
       t.float :longitude
-      t.date :date
-      t.boolean :continuous
+      t.datetime :starts_at
+      t.datetime :ends_at
 
       t.timestamps null: false
     end
