@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :locations
+  resources :events
+  resources :indoor_activities
   get 'static_pages/home_page'
   root 'static_pages#home_page'
 
