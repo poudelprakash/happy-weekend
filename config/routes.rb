@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :indoor_activities
-  get 'static_pages/home_page'
-  root 'static_pages#home_page'
+  # get 'admin/indoor_activities' => 'indoor_activities#new'
+  # root 'static_pages#home_page'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

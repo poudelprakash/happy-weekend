@@ -25,11 +25,15 @@ class IndoorActivitiesController < ApplicationController
   # POST /indoor_activities.json
   def create
     @indoor_activity = IndoorActivity.new(indoor_activity_params)
+    category = Category.find(params[:category_id]["0"])
+    audience = Audience.find(params[:audience_id]["0"])
 
     respond_to do |format|
       if @indoor_activity.save
         format.html { redirect_to @indoor_activity, notice: 'Indoor activity was successfully created.' }
         format.json { render :show, status: :created, location: @indoor_activity }
+        @indoor_activity.categories << category
+        @indoor_activity.audiences << audience
       else
         format.html { render :new }
         format.json { render json: @indoor_activity.errors, status: :unprocessable_entity }
@@ -42,8 +46,17 @@ class IndoorActivitiesController < ApplicationController
   def update
     respond_to do |format|
       if @indoor_activity.update(indoor_activity_params)
+        category = Category.find(params[:category_id]["0"])
+        audience = Audience.find(params[:audience_id]["0"])
+
         format.html { redirect_to @indoor_activity, notice: 'Indoor activity was successfully updated.' }
         format.json { render :show, status: :ok, location: @indoor_activity }
+        @indoor_activity.categories.delete_all
+        @indoor_activity.categories << category
+
+        @indoor_activity.audiences.delete_all
+        @indoor_activity.audiences << audience
+
       else
         format.html { render :edit }
         format.json { render json: @indoor_activity.errors, status: :unprocessable_entity }

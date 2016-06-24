@@ -15,6 +15,15 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
+  <div class="field">
+    <%= collection_select(:category_id, 0, Category.all, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= collection_select(:audience_id, 0, Audience.all, :id, :name) %>
+  </div>
+
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_field :description %>
