@@ -24,6 +24,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Figaro for setting environment variables for secrets that aren't included with the source code
 gem 'figaro'
 
+gem 'bootstrap-sass'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
