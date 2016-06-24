@@ -1,5 +1,5 @@
 //Text
-$base__font-size: 14px;
+$base__font-size: 16px;
 $base__line: 24px;
 
 //Font Stacks
@@ -58,7 +58,7 @@ $cerulean-blue: #217ca3;
 $mustard: #e29930;
 $asphalt: #32384d;
 $shadow: #211f30;
-$default-gray: #d4d4d4;
+$default-gray: #ececec;
 
 //Site Colors
 $primary-color: $mustard;
@@ -68,3 +68,4 @@ $color-text: $asphalt;
 $sm-device: 768px;
 $md-device: 992px;
 $lg-device: 1200px;
+$gradient:  linear-gradient(rgba(0, 0, 0, 0.4), rgba(0,0,0,0),rgba(0, 0, 0, 0.4));

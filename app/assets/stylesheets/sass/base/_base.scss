@@ -2,8 +2,18 @@
 	margin:0;
 	padding:0;
 	box-sizing: border-box;
+	&:after{
+		clear: both;
+		content: "";
+		display: block;
+	}
 }
-
+html, body{
+	font-size: 100%;
+}
+html{
+	height: 100%;
+}
 body{
 	-webkit-font-smoothing: antialiased;
 	color: $color-text;
@@ -19,6 +29,9 @@ a{
 	color: $color-link;
 	text-decoration: none;
 	transition: color .2s;
+	&:hover{
+		text-decoration: none;
+	}
 }
 
 a, span, strong {
@@ -39,15 +52,17 @@ main{
 h1,h2,h3,h4,h5,h6{
 	font-family: $font-family--heading;
 	font-weight: normal;
+	margin: 0;
+	padding: 0;
 }
 h1{
-	font-size: rem(30px);
-}
-h2{
 	font-size: rem(26px);
 }
-h3{
+h2{
 	font-size: rem(22px);
+}
+h3{
+	font-size: rem(18px);
 }
 img{
 	max-width: 100%;
@@ -55,5 +70,16 @@ img{
 }
 p{
 	margin: 0;
-	font-family: $font-family--primary;
+	font-family: $font-family--secondary;
+	font-size: rem(12px);
+	color: $color-text;
+}
+button{
+	background: none;
+	border: 1px solid $default-gray;
+	border-radius: 20px;
+	padding: 8px;
+	color: $color-text;
+	font-size: rem(12px);
+	margin-top: rem(20px);
 }

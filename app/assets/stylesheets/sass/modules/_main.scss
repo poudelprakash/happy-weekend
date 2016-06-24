@@ -1,0 +1,112 @@
+.common-block{
+	padding: 30px 0;
+	border-bottom: 1px solid $default-gray;
+}
+
+.heading{
+	margin: 0 0 20px 0;
+}
+.grid{
+	text-align: center;
+	a{
+		display: block;
+	}
+	@include e(image){
+		@extend %shadow;
+		height: 215px;
+		margin-bottom: rem(10px);
+		overflow: hidden;
+	}
+	@include e(title){
+		margin-bottom: rem(10px);
+		color: $color-text;
+		font-size: rem(16px);
+	}
+	@include e(location){
+		margin-bottom: 2px;;
+		font-size: rem(12px);
+		color: $color-link;
+	}
+}
+.featured{
+	.heading{
+		font-size: rem(24px);
+	}
+	.grid{
+		&.big{
+			.grid__image{
+				height: 522px;
+			}
+		}
+		&.small{
+			.grid__desc{
+				height: 138px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+	}
+}
+.category{
+	text-align: center;
+	.grid{
+		display: inline-block;
+		width: 340px;
+		height: 220px;
+		margin: 0 20px 20px 0;
+		&.animal{
+			background: image-url('animal.jpg') no-repeat center center;
+			background-size:cover;
+		}
+		&.sports{
+			background: image-url('sports.jpg') no-repeat center center;
+			background-size:cover;
+		}
+		&.kids{
+			background: image-url('child.jpg') no-repeat center center;
+			background-size:cover;
+		}
+		&.dining{
+			background: image-url('dining.jpg') no-repeat center center;
+			background-size:cover;
+		}
+		&.heritage{
+			background: image-url('culture.jpg') no-repeat center center;
+			background-size:cover;
+		}
+		&.museum{
+			background: image-url('museum.jpg') no-repeat center center;
+			background-size:cover;
+		}
+		&.hiking{
+			background: image-url('hiking.jpg') no-repeat center center;
+			background-size:cover;
+		}
+		&.theatre{
+			background: image-url('theatre.jpg') no-repeat center center;
+			background-size:cover;
+		}
+		&.concert{
+			background: image-url('concert.jpg') no-repeat center center;
+			background-size:cover;
+		}
+		&.karaoke{
+			background: image-url('karaoke.jpg') no-repeat center center;
+			background-size:cover;
+		}
+		&.cinema{
+			background: image-url('cinema.jpg') no-repeat center center;
+			background-size:cover;
+		}
+		&.shopping{
+			background: image-url('shopping.jpg') no-repeat center center;
+			background-size:cover;
+		}
+		h3{
+			color: transparentize($white, 0.1);
+			margin-top: 95px;
+			font-size: rem(28px);
+			text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+		}
+	}
+}
