@@ -1,0 +1,14 @@
+header{
+	background: $primary-color;
+	padding: 20px 0;
+	a{
+		color: $white;
+		display: inline-block;
+		&:hover{
+			color: $white;
+		}
+	}
+	h1{
+		font-size: rem(18px);
+	}
+}

@@ -1,0 +1,49 @@
+.common-block{
+	padding: 30px 0;
+	border-bottom: 1px solid $default-gray;
+}
+
+.heading{
+	margin: 0 0 20px 0;
+}
+.grid{
+	margin-bottom: 20px;
+	a{
+		display: block;
+	}
+	@include e(image){
+		@extend %shadow;
+		height: 215px;
+		margin-bottom: rem(10px);
+		overflow: hidden;
+	}
+	@include e(title){
+		margin-bottom: rem(10px);
+		color: $color-text;
+		font-size: rem(16px);
+	}
+	@include e(location){
+		margin-bottom: 2px;;
+		font-size: rem(12px);
+		color: $color-link;
+	}
+}
+.featured{
+	.heading{
+		font-size: rem(24px);
+	}
+	.grid{
+		&.big{
+			.grid__image{
+				height: 522px;
+			}
+		}
+		&.small{
+			.grid__desc{
+				height: 138px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+	}
+}
