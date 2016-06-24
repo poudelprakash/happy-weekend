@@ -3,8 +3,6 @@ class CreateLocations < ActiveRecord::Migration
     create_table :locations do |t|
       t.string :name
       t.string :description
-      t.references :audience, index: true, foreign_key: true
-      t.references :category, index: true, foreign_key: true
       t.float :latitude
       t.float :longitude
       t.time :opens_at

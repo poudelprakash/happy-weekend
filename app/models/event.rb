@@ -1,4 +1,4 @@
 class Event < ActiveRecord::Base
-  belongs_to :audience
-  belongs_to :category
+  has_and_belongs_to_many :audiences
+  has_and_belongs_to_many :categories
 end

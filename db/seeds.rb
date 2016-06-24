@@ -25,6 +25,13 @@ alchemist = IndoorActivity.create(name: "Alchemist",
 alchemist.categories << books
 alchemist.audiences << single_audience
 
-Event.create(name: "Hackathon", description:'hackathon', audience_id: single_audience.id, category_id: sports.id,latitude: 27.7122127, longitude:85.304777, starts_at: DateTime.now, ends_at: DateTime.now + 1.day)
+hackathon = Event.create(name: "Hackathon", description:'hackathon', latitude: 27.7122127, longitude:85.304777, starts_at: DateTime.now, ends_at: DateTime.now + 1.day)
+hackathon.audiences << single_audience
+hackathon.categories << sports
 
-Location.create(name: "Archery", description:'archery', audience_id: single_audience.id, category_id: sports.id, latitude: 27.7122127, longitude:85.304777, opens_at: Time.now, closes_at: Time.now)
+archery = Location.create(name: "Archery", description:'archery', latitude: 27.7122127, longitude:85.304777, opens_at: Time.now, closes_at: Time.now)
+
+archery.audiences << single_audience
+archery.audiences << couple_audience
+
+archery.categories << sports
