@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160624140637) do
+ActiveRecord::Schema.define(version: 20160624152505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,12 +44,48 @@ ActiveRecord::Schema.define(version: 20160624140637) do
   add_index "categories_indoor_activities", ["category_id"], name: "index_categories_indoor_activities_on_category_id", using: :btree
   add_index "categories_indoor_activities", ["indoor_activity_id"], name: "index_categories_indoor_activities_on_indoor_activity_id", using: :btree
 
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "audience_id"
+    t.integer  "category_id"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "events", ["audience_id"], name: "index_events_on_audience_id", using: :btree
+  add_index "events", ["category_id"], name: "index_events_on_category_id", using: :btree
+
   create_table "indoor_activities", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.date     "release_date"
+    t.datetime "release_date"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "audience_id"
+    t.integer  "category_id"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.time     "opens_at"
+    t.time     "closes_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "locations", ["audience_id"], name: "index_locations_on_audience_id", using: :btree
+  add_index "locations", ["category_id"], name: "index_locations_on_category_id", using: :btree
+
+  add_foreign_key "events", "audiences"
+  add_foreign_key "events", "categories"
+  add_foreign_key "locations", "audiences"
+  add_foreign_key "locations", "categories"
 end
