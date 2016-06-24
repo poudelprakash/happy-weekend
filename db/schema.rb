@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160624143535) do
+ActiveRecord::Schema.define(version: 20160624143939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20160624143535) do
     t.string   "name"
     t.string   "description"
     t.integer  "audience_id"
+    t.integer  "category_id"
     t.float    "latitude"
     t.float    "longitude"
     t.date     "date"
@@ -57,6 +58,7 @@ ActiveRecord::Schema.define(version: 20160624143535) do
   end
 
   add_index "events", ["audience_id"], name: "index_events_on_audience_id", using: :btree
+  add_index "events", ["category_id"], name: "index_events_on_category_id", using: :btree
 
   create_table "indoor_activities", force: :cascade do |t|
     t.string   "name"
@@ -67,4 +69,5 @@ ActiveRecord::Schema.define(version: 20160624143535) do
   end
 
   add_foreign_key "events", "audiences"
+  add_foreign_key "events", "categories"
 end
