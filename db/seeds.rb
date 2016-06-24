@@ -131,12 +131,22 @@ Location.create(name: "Sanga Mahadev(Kailashnath)", description:"Kailashnath Mah
 
 Location.create(name: "Kathmandu Fun Valley", description:'Contact:1-6540712', category_id: kids.id, latitude:27.6471889 , longitude:85.4651807 , opens_at: '10 am', closes_at: '').audiences << [kid_audience, couple_audience, family_audience, group_audience, single_audience]
 
-Location.create(name: "Bhrikuti Mandap Park", description:'', category_id: kids.id, latitude:27.7015661 , longitude: 85.3173137, opens_at: '10 am', closes_at: '').audiences << [kid_audience]
+Location.create(name: "Bhrikuti Mandap Park", description:'', category_id: kids.id, latitude:27.7015661 , longitude: 85.3173137, opens_at: '10 am', closes_at: '').audiences << [kid_audience, couple_audience]
+
 Location.create(name: "Bal Sansar, Civil Mall", description:'Contact:1-4258429', category_id: kids.id, latitude:27.69912, longitude:85.3105943 , opens_at: '-', closes_at: '-').audiences << [kid_audience]
 
 
 #Museums
 
+Location.create(name: "Nation Museum, Chhauni", description:'', category_id: kids.id, latitude:27.714366 , longitude:85.2859834 , opens_at: '10 am', closes_at: '').audiences << [kid_audience, family_audience, group_audience, single_audience]
+
+Location.create(name: "Hanuman Dhoka Museum", description:'', category_id: kids.id, latitude:27.7043, longitude:85.3051679 , opens_at: '9:00 AM', closes_at: '').audiences << [kid_audience, family_audience, group_audience, single_audience]
+
+Location.create(name: "Patan Museum", description:'', category_id: kids.id, latitude:27.6471889 , longitude:85.4651807 , opens_at: '10:30 am', closes_at: '').audiences << [kid_audience, family_audience, group_audience, single_audience]
+
+Location.create(name: " National Art Museum", description:'', category_id: kids.id, latitude:27.673373 , longitude:85.4333123 , opens_at: '10 am', closes_at: '').audiences << [kid_audience, family_audience, group_audience, single_audience]
+
+Location.create(name: "Narayanhiti palace museum", description:'', category_id: kids.id, latitude:27.7179483 , longitude:85.3163709 , opens_at: '11 am', closes_at: '').audiences << [kid_audience, family_audience, group_audience, single_audience]
 
 
 #Events
