@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 20160624160951) do
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
+    t.integer  "category_id"
     t.float    "latitude"
     t.float    "longitude"
     t.datetime "starts_at"
@@ -86,6 +87,8 @@ ActiveRecord::Schema.define(version: 20160624160951) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "events", ["category_id"], name: "index_events_on_category_id", using: :btree
 
   create_table "indoor_activities", force: :cascade do |t|
     t.string   "name"
@@ -98,6 +101,7 @@ ActiveRecord::Schema.define(version: 20160624160951) do
   create_table "locations", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
+    t.integer  "category_id"
     t.float    "latitude"
     t.float    "longitude"
     t.time     "opens_at"
@@ -106,4 +110,8 @@ ActiveRecord::Schema.define(version: 20160624160951) do
     t.datetime "updated_at",  null: false
   end
 
+  add_index "locations", ["category_id"], name: "index_locations_on_category_id", using: :btree
+
+  add_foreign_key "events", "categories"
+  add_foreign_key "locations", "categories"
 end
