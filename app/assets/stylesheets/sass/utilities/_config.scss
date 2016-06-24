@@ -1,0 +1,70 @@
+//Text
+$base__font-size: 14px;
+$base__line: 24px;
+
+//Font Stacks
+
+$font-url--google : 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900';
+
+// $typefaces
+// Configuration of webfonts imports.
+// $typefaces - {map}
+// @family - {string}
+// @weight - {integer} or {keyword} i.e. 800, bold
+// @style - {keyword} i.e. normal, italic
+
+//$typefaces: (
+//  'FILENAME': (
+//    family: 'fontname',
+//    weight: 100,
+//    style: normal,
+//  ),
+//);
+@font-face {
+    font-family: 'open_sanslight';
+    src: url('../fonts/OpenSans-Light-webfont.eot');
+    src: url('../fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Light-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/OpenSans-Regular-webfont.eot');
+    src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$font-family-sans-fallback: 'Arial', sans-serif;
+$font-family--heading: 'Lato','Helvetica Neue', 'Helvetica', $font-family-sans-fallback;
+$font-family-normal: 'open_sanslight';
+$font-family-black: 'open_sansregular';
+$font-family--primary : $font-family-normal;
+$font-family--secondary : $font-family-black;
+
+//Path to Assets
+$path--rel: "../images";
+
+//Colors
+$white: #fff;
+$black: #000;
+$cerulean-blue: #217ca3;
+$mustard: #e29930;
+$asphalt: #32384d;
+$shadow: #211f30;
+$default-gray: #d4d4d4;
+
+//Site Colors
+$primary-color: $mustard;
+$color-link: $cerulean-blue;
+$color-text: $asphalt;
+//Breakpoints
+$sm-device: 768px;
+$md-device: 992px;
+$lg-device: 1200px;
