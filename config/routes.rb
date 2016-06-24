@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :locations
+  get 'locations/category/:id' => 'catalog#purchase', as: :purchase
   resources :events
   resources :indoor_activities
   get 'static_pages/home_page'

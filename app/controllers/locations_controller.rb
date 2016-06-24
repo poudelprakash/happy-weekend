@@ -4,7 +4,7 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
+    @locations =  Location.where(category_id: params[:category_id])
   end
 
   # GET /locations/1
