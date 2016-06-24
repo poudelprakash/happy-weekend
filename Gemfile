@@ -26,6 +26,11 @@ gem 'figaro'
 
 gem 'bootstrap-sass'
 
+gem 'cloudinary'
+# carrierwave for files upload
+gem 'carrierwave'
+# figaro to maintain secret codes
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
