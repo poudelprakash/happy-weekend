@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dzgoep1yq
+  api_key: '385687138296611'
+  api_secret: 8597CNv4bnDJ7_DzGplPEp2NBSI
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dzgoep1yq
+  api_key: '385687138296611'
+  api_secret: 8597CNv4bnDJ7_DzGplPEp2NBSI
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dzgoep1yq
+  api_key: '385687138296611'
+  api_secret: 8597CNv4bnDJ7_DzGplPEp2NBSI
+  enhance_image_tag: true
+  static_image_support: false
