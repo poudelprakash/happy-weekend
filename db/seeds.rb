@@ -103,7 +103,50 @@ Location.create(name: "Baneshwor Spa Swimming Pool", description:'Contact:1-4468
 
 Location.create(name: "Bulls Club Swimming Pool", description:'Contact:1-5592599', category_id: sports.id, latitude:27.6619214, longitude:85.2897861 , opens_at: '7 am', closes_at: '-').audiences << [single_audience, couple_audience, group_audience]
 
-#Event.create(name: "Hackathon", description:'hackathon', category_id: sports.id,latitude: 27.7122127, longitude:85.304777, starts_at: DateTime.now, ends_at: DateTime.now + 1.day)
+
+
+#Religious places
+Location.create(name: "PashupatiNath", description:'The Pashupatinath Temple is a famous, sacred Hindu temple dedicated to Pashupatinath and is located on the banks of the Bagmati River 5 kilometres north-east of Kathmandu Valley in the eastern city of Kathmandu, the capital of Nepal', category_id: heritage.id, latitude:27.7104528 , longitude:85.3464986 , opens_at: '', closes_at: '').audiences << [kid_audience, family_audience, couple_audience, single_audience, group_audience]
+
+Location.create(name: "SwoyambhuNath", description:"Swayambhunath is an ancient religious architecture atop a hill in the Kathmandu Valley, west of Kathmandu city. The Tibetan name for the site means 'Sublime Trees', for the many varieties of trees found on the hill.", category_id: heritage.id, latitude:27.7149515 , longitude:85.2884397 , opens_at: '', closes_at: '').audiences << [kid_audience, family_audience, couple_audience, single_audience, group_audience]
+
+Location.create(name: "Changu Narayan", description:'The ancient Hindu temple of Changu Narayan is located on a high hilltop that is also known as Changu or Dolagiri. The temple was surrounded by forest with champak tree and a small village, known as Changu Village', category_id: heritage.id, latitude:27.7163946 , longitude:85.4256231 , opens_at: '', closes_at: '').audiences << [kid_audience, family_audience, couple_audience, single_audience, group_audience]
+
+Location.create(name: "BoudhaNath Stupa", description:'Boudhanath is a stupa in Kathmandu, Nepal. It is known as Khāsti in Nepal Bhasa, Jyarung Khashor in Tibetan language or as Bauddha by speakers of Nepali.', category_id: heritage.id, latitude:27.7214093, longitude:85.3597323  , opens_at: '', closes_at: '').audiences << [kid_audience, family_audience, couple_audience, single_audience, group_audience]
+
+Location.create(name: "Budhanilkantha", description:'Budhanilkantha Temple, located in Budhanilkantha, Nepal, is a Hindu open air temple dedicated to Lord Vishnu. Budhanilkantha Temple is located at the base of the Shivapuri Hill and can be identified by a large reclining statue of Lord Vishnu.', category_id: heritage.id, latitude:27.7781138 , longitude: 85.3604221, opens_at: '', closes_at: '').audiences << [kid_audience, family_audience, couple_audience, single_audience, group_audience]
+
+Location.create(name: "Dakshinkali", description:'Dakshinkali Temple or Dakshin Kali Temple, located 22 kilometres outside Kathmandu and about 1 kilometre outside the village of Pharping, is one of the main temples of Nepal dedicated to the goddess Kali.', category_id: heritage.id, latitude: 27.6050679, longitude: 85.2606803, opens_at: '', closes_at: '').audiences << [kid_audience, family_audience, couple_audience, single_audience, group_audience]
+
+Location.create(name: "Basantapur Durbar Square", description:'Kathmandu Durbar Square in front of the old royal palace of the former Kathmandu Kingdom is one of three Durbar Squares in the Kathmandu Valley in Nepal, all of which are UNESCO World Heritage Sites', category_id: heritage.id, latitude:27.704328, longitude:85.3051074 , opens_at: '', closes_at: '').audiences << [kid_audience, family_audience, couple_audience, single_audience, group_audience]
+
+Location.create(name: "Patan Durbar Square", description:'Patan Durbar Square is situated at the centre of the city of Lalitpur in Nepal. It is one of the three Durbar Squares in the Kathmandu Valley, all of which are UNESCO World Heritage Sites.', category_id: heritage.id, latitude:27.6727305 , longitude: 85.3231056, opens_at: '', closes_at: '').audiences << [kid_audience, family_audience, couple_audience, single_audience, group_audience]
+
+Location.create(name: "Bhaktapur Durbar Square", description:'Bhaktapur Durbar Square is the plaza in front of the royal palace of the old Bhaktapur Kingdom, 1400m above sea level. It is one of three Durbar Squares in the Kathmandu Valley in Nepal, all of which are UNESCO World Heritage Sites.', category_id: heritage.id, latitude:27.672186 , longitude:85.4262673 , opens_at: '', closes_at: '').audiences << [kid_audience, family_audience, couple_audience, single_audience, group_audience]
+
+Location.create(name: "Sanga Mahadev(Kailashnath)", description:"Kailashnath Mahadev Statue is the world's tallest Shiva statue. It is situated in Sanga, the border of Bhaktapur and Kavrepalanchwok districts in Nepal which is about 20 km from Kathmandu.", category_id: heritage.id, latitude:27.6404111 , longitude:85.4824187 , opens_at: '7:30 am', closes_at: '').audiences << [kid_audience, family_audience, couple_audience, single_audience, group_audience]
+
+
+#kids
+
+Location.create(name: "Kathmandu Fun Valley", description:'Contact:1-6540712', category_id: kids.id, latitude:27.6471889 , longitude:85.4651807 , opens_at: '10 am', closes_at: '').audiences << [kid_audience, couple_audience, family_audience, group_audience, single_audience]
+
+Location.create(name: "Bhrikuti Mandap Park", description:'', category_id: kids.id, latitude:27.7015661 , longitude: 85.3173137, opens_at: '10 am', closes_at: '').audiences << [kid_audience]
+Location.create(name: "Bal Sansar, Civil Mall", description:'Contact:1-4258429', category_id: kids.id, latitude:27.69912, longitude:85.3105943 , opens_at: '-', closes_at: '-').audiences << [kid_audience]
+
+
+#Museums
+
+
+
+#Events
+
+
+
+
+
+
+#Event.create(name: "Hackathon", description:"hackathon", category_id: sports.id,latitude: 27.7122127, longitude:85.304777, starts_at: DateTime.now, ends_at: DateTime.now + 1.day)
 
 
 
