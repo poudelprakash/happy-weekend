@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @location.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @location.description %>
+</p>
+
+<p>
+  <strong>Audience:</strong>
+  <%= @location.audience %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @location.category %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @location.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @location.longitude %>
+</p>
+
+<p>
+  <strong>Opens at:</strong>
+  <%= @location.opens_at.to_formatted_s(:time) %>
+</p>
+
+<p>
+  <strong>Closes at:</strong>
+  <%= @location.closes_at.to_formatted_s(:time) %>
+</p>
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>
