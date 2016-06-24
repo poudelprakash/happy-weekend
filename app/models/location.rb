@@ -1,4 +1,4 @@
 class Location < ActiveRecord::Base
-  belongs_to :audience
+  has_and_belongs_to_many :audiences
   belongs_to :category
 end

@@ -75,3 +75,4 @@ alchemist = IndoorActivity.create(name: "Alchemist",
 alchemist.categories << books
 alchemist.audiences << single_audience
 
+
