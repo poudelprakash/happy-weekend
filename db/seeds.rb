@@ -36,9 +36,9 @@ shopping = Category.create(name: 'Shopping', css_class: 'shopping')
 #Nature
 
 zoo = Location.create(name: "Central Zoo", description:'The Central Zoo is a 6-hectare zoo in Jawalakhel, Nepal. It is home to some 870 animals in 109 species, and is operated by the National Trust for Nature Conservation. Although it was originally a private zoo, it was opened to the public in 1956.', category_id: nature.id, latitude: 27.673274, longitude:85.3107136, opens_at: '10 am', closes_at: '4 pm').audiences << [kids_audience, single_audience, couple_audience]
-zoo.images.build(name:"Central Zoo")
-zoo.remote_source_url = "https://leadof5.files.wordpress.com/2014/10/zoo.jpg"
-zoo.save
+# zoo.images.build(name:"Central Zoo")
+# zoo.remote_source_url = "https://leadof5.files.wordpress.com/2014/10/zoo.jpg"
+# zoo.save
 
 Location.create(name: "Godawari Botanical Garden", description:'The National Botanical Garden is located in the base of Mount Phulchoki (2715m.) at Godawari (1515m.) at the south east corner of Kathmandu valley. The area of the Garden is 82 hectare. It is surrounded by evergreen natural forests. The temperature ranges between 20°C and 30°C during summer and -5°C to 20°C during winter. This Garden was graciously inaugurated by His Majesty the King Late Mahendra Bir Bikram Shah Dev on the 20th October 1962. Ever since its establishment much of its activities have been centered in enriching the garden with indigenous plants as to integrate its collection with scientific investigation, conservation, education and demonstration.', category_id: nature.id, latitude: 27.5969324, longitude:85.3781706, opens_at: '10 am', closes_at: '5 pm').audiences << [kids_audience, single_audience, couple_audience, family_audience, group_audience]
 
@@ -169,9 +169,9 @@ Event.create(name: "Live Musical Era-2016 \"Season-5\"", description:"Live Music
 
 Live Musical Era-2016, Kathmandu! the place to be if you want to flow with the music, want to enjoy drinks with your friends or just want to party hard! And that’s not all we’ll be giving away tons of gift through a lucky draw process during the event, so come and test your luck. You might go back home with much more than you had come with.
 
-We have limited the crowd to 700 poeple only so hurry up and get your tickets before the place gets packed! 
+We have limited the crowd to 700 poeple only so hurry up and get your tickets before the place gets packed!
 
-Ticket price: Rs. 1000/- 
+Ticket price: Rs. 1000/-
 
 http://www.femnepal.com/news/live-musical-era-2016season-5/", category_id: sports.id, starts_at: "2016-06-25 19:00:00").audiences << [couple_audience, group_audience, single_audience]
 

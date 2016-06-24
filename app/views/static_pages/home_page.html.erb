@@ -123,7 +123,7 @@
       <h2 class="heading col-xs-12 col-sm-12 col-md-12">Outdoor</h2>
       <ul class="category">
         <% Category.all.drop(3).each do |category| %>
-          <li class="grid <%= category.css_class %>"> <%= link_to category.name, locations_path(category_id: category.id) %>
+          <li class="grid <%= category.css_class %>"> <h3><%= link_to category.name, locations_path(category_id: category.id) %></h3>
           </li>
         <%end %>
         <!--<li class="grid animal">-->
