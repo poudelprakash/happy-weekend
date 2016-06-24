@@ -33,6 +33,8 @@ karaoke = Category.create(name: 'Karaoke')
 shopping = Category.create(name: 'Shopping')
 
 
+#Nature
+
 Location.create(name: "Central Zoo", description:'The Central Zoo is a 6-hectare zoo in Jawalakhel, Nepal. It is home to some 870 animals in 109 species, and is operated by the National Trust for Nature Conservation. Although it was originally a private zoo, it was opened to the public in 1956.', category_id: nature.id, latitude: 27.673274, longitude:85.3107136, opens_at: '10 am', closes_at: '4 pm').audiences << [kids_audience, single_audience, couple_audience]
 
 Location.create(name: "Godawari Botanical Garden", description:'The National Botanical Garden is located in the base of Mount Phulchoki (2715m.) at Godawari (1515m.) at the south east corner of Kathmandu valley. The area of the Garden is 82 hectare. It is surrounded by evergreen natural forests. The temperature ranges between 20°C and 30°C during summer and -5°C to 20°C during winter. This Garden was graciously inaugurated by His Majesty the King Late Mahendra Bir Bikram Shah Dev on the 20th October 1962. Ever since its establishment much of its activities have been centered in enriching the garden with indigenous plants as to integrate its collection with scientific investigation, conservation, education and demonstration.', category_id: nature.id, latitude: 27.5969324, longitude:85.3781706, opens_at: '10 am', closes_at: '5 pm').audiences << [kids_audience, single_audience, couple_audience, family_audience, group_audience]
@@ -56,8 +58,50 @@ Location.create(name: "Garden of Dreams", description:'The Garden of Dreams, als
 
 
 
+#sports
+Location.create(name: "Kathmandu Futsal", description:'Contact: 980-2021223', category_id: sports.id, latitude:27.7050634 , longitude:85.2824494 , opens_at: '6 am', closes_at: '').audiences << [group_audience]
+Location.create(name: "Royal Futsal", description:'Contact: 1-4460436', category_id: sports.id, latitude:27.7050282 , longitude:85.2824492 , opens_at: '7 am', closes_at: '').audiences << [group_audience]
+Location.create(name: "Adarsha Futsal Arena", description:'Contact: 984-1440576', category_id: sports.id, latitude:27.705037, longitude:85.2824493 , opens_at: '6 am', closes_at: '').audiences << [group_audience]
+Location.create(name: "Dhuku Futsal Hub Pvt Ltd", description:'Contact:1-4435832', category_id: sports.id, latitude:27.7050193 , longitude:85.2824492 , opens_at: '6 am', closes_at: '').audiences << [group_audience]
+Location.create(name: "Futsal Arena", description:'Contact:1-4433515', category_id: sports.id, latitude:27.6920914 , longitude:85.2822775 , opens_at: '6 am', closes_at: '').audiences << [group_audience]
+Location.create(name: "Hattiban Futsal", description:'Contact: 1-5251490', category_id: sports.id, latitude:27.6920826 , longitude:85.2822774 , opens_at: '6 am', closes_at: '').audiences << [group_audience]
+Location.create(name: "Prismatic Futsal & Recreation Centre", description:'Contact:1-5521587', category_id: sports.id, latitude:27.6920738 , longitude:85.2822774 , opens_at: '7 am', closes_at: '').audiences << [group_audience]
+Location.create(name: "Baneshwor Futsal & Recreation Center", description:'Contact:1-4105028', category_id: sports.id, latitude:27.692065 , longitude:85.2822774 , opens_at: '6 am', closes_at: '').audiences << [group_audience]
+Location.create(name: "Maidan Futsal", description:'Contact:1-4497642', category_id: sports.id, latitude:27.6920562 , longitude:85.2822773 , opens_at: '7 am', closes_at: '').audiences << [group_audience]
+Location.create(name: "Field Futsal", description:'Contact:985-1188182', category_id: sports.id, latitude:27.7025756 , longitude:85.2631878 , opens_at: '7 am', closes_at: '').audiences << [group_audience]
+Location.create(name: "Kirtipur Futsal", description:'Contact:981-8149835', category_id: sports.id, latitude:27.6920297 , longitude:85.2822772 , opens_at: '6 am', closes_at: '').audiences << [group_audience]
+
+Location.create(name: "The Best Archery Pvt. Ltd, Nagpokhari", description:'Contact:1-2299904', category_id: sports.id, latitude:27.6920121 , longitude:85.2822771, opens_at: '8 am', closes_at: '').audiences << [single_audience, group_audience, family_audience, couple_audience]
+Location.create(name: "The Best Archery Pvt. Ltd, Jhamsikhel", description:'Contact:1-2299904', category_id: sports.id, latitude:27.6920209 , longitude:85.2822771 , opens_at: '7 am', closes_at: '').audiences << [single_audience, group_audience, family_audience, couple_audience]
 
 
+Location.create(name: "Go Kart Racing Nepal", description:'Contact:980-1201231', category_id: sports.id, latitude:27.678758 , longitude:85.3006743 , opens_at: '11 am', closes_at: '').audiences << [group_audience, couple_audience]
+
+
+Location.create(name: "Ultimate Indoor Cricket", description:'Contact:985-1182623', category_id: sports.id, latitude:27.6787404 , longitude:85.2328224 , opens_at: '6 am', closes_at: '').audiences << [group_audience]
+
+Location.create(name: "Royal Indoor Cricket", description:'Contact: 1-4372122', category_id: sports.id, latitude:27.6787051 , longitude:85.2328222 , opens_at: '-', closes_at: '-').audiences << [group_audience]
+
+Location.create(name: "Laser Maxx, Civil Mall", description:'Contact: 981-8171067', category_id: sports.id, latitude:27.699205 , longitude:85.3105923 , opens_at: '10 am', closes_at: '').audiences << [group_audience]
+
+
+Location.create(name: "Asterisk Climbing Wall", description:'Contact: 4419265', category_id: sports.id, latitude:27.7163348 , longitude:85.3103627 , opens_at: '10 am', closes_at: '').audiences << [single_audience, couple_audience, group_audience]
+
+Location.create(name: "Pasang Lhamu Wall Climbing", description:'Contact: 1-4370742', category_id: sports.id, latitude:27.7317423 , longitude:85.34293343 , opens_at: '10 am', closes_at: '5 pm').audiences << [single_audience, couple_audience, group_audience]
+
+
+
+Location.create(name: "Bowling, Civil Mall", description:'', category_id: sports.id, latitude:27.699205 , longitude:85.3105923 , opens_at: '-', closes_at: '-').audiences << [single_audience, couple_audience, group_audience]
+
+Location.create(name: "Bowling, City Center Mall", description:'Contact:1-4419363', category_id: sports.id, latitude:27.7045664 , longitude:85.3152726 , opens_at: '-', closes_at: '-').audiences << [single_audience, couple_audience, group_audience]
+
+
+Location.create(name: "Nepal Swimming Association", description:'', category_id: sports.id, latitude:27.6679713 , longitude:85.313928426 , opens_at: '-', closes_at: '-').audiences << [single_audience, couple_audience, group_audience]
+
+
+Location.create(name: "Baneshwor Spa Swimming Pool", description:'Contact:1-4468596', category_id: sports.id, latitude:27.7095585, longitude:85.3089022 , opens_at: '5 am', closes_at: '-').audiences << [single_audience, couple_audience, group_audience]
+
+Location.create(name: "Bulls Club Swimming Pool", description:'Contact:1-5592599', category_id: sports.id, latitude:27.6619214, longitude:85.2897861 , opens_at: '7 am', closes_at: '-').audiences << [single_audience, couple_audience, group_audience]
 
 #Event.create(name: "Hackathon", description:'hackathon', category_id: sports.id,latitude: 27.7122127, longitude:85.304777, starts_at: DateTime.now, ends_at: DateTime.now + 1.day)
 
