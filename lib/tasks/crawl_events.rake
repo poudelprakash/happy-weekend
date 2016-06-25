@@ -68,5 +68,8 @@ namespace :crawl_events do
         Event.create(name: event.event_title, description:event.event_description, category_id: Category.find_by_name('Nature and Animals').id)
     end
   end
+  
+  
+  
 
 end

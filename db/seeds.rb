@@ -13,24 +13,24 @@ group_audience = Audience.create(name: 'Group')
 
 
 # indoor categories
-video_games = Category.create(name: 'Video Games')
-movies = Category.create(name: 'Movies and Series')
-books = Category.create(name: 'Books')
+video_games = Category.create(name: 'Video Games', css_class: 'animal')
+movies = Category.create(name: 'Movies and Series', css_class: 'sports')
+books = Category.create(name: 'Books', css_class: 'kids')
 
 
 #outdoor categories
-nature = Category.create(name: 'Nature and Animals')
-sports = Category.create(name: 'Sports')
-eating = Category.create(name: 'Eating and Dining')
-heritage = Category.create(name: 'Religious places and cultural heritage')
-kids = Category.create(name: 'Kids Entertainment')
-museums = Category.create(name: 'Museums')
-hiking = Category.create(name: 'Hiking')
-theatre = Category.create(name: 'Theatre/Dramas')
-events = Category.create(name: 'Events  and Concerts')
-cinema = Category.create(name: 'Cinema')
-karaoke = Category.create(name: 'Karaoke')
-shopping = Category.create(name: 'Shopping')
+nature = Category.create(name: 'Nature and Animals', css_class: 'animal')
+sports = Category.create(name: 'Sports', css_class: 'sports')
+eating = Category.create(name: 'Eating and Dining', css_class: 'dining')
+heritage = Category.create(name: 'Religious places and cultural heritage', css_class: 'heritage')
+kids = Category.create(name: 'Kids Entertainment', css_class: 'kids')
+museums = Category.create(name: 'Museums', css_class: 'museum')
+hiking = Category.create(name: 'Hiking', css_class: 'hiking')
+theatre = Category.create(name: 'Theatre/Dramas', css_class: 'theatre')
+events = Category.create(name: 'Events  and Concerts', css_class: 'concert')
+cinema = Category.create(name: 'Cinema', css_class: 'cinema')
+karaoke = Category.create(name: 'Karaoke', css_class: 'karaoke')
+shopping = Category.create(name: 'Shopping', css_class: 'shopping')
 
 
 #Nature
@@ -170,9 +170,9 @@ Event.create(name: "Live Musical Era-2016 \"Season-5\"", description:"Live Music
 
 Live Musical Era-2016, Kathmandu! the place to be if you want to flow with the music, want to enjoy drinks with your friends or just want to party hard! And that’s not all we’ll be giving away tons of gift through a lucky draw process during the event, so come and test your luck. You might go back home with much more than you had come with.
 
-We have limited the crowd to 700 poeple only so hurry up and get your tickets before the place gets packed! 
+We have limited the crowd to 700 poeple only so hurry up and get your tickets before the place gets packed!
 
-Ticket price: Rs. 1000/- 
+Ticket price: Rs. 1000/-
 
 http://www.femnepal.com/news/live-musical-era-2016season-5/", category_id: sports.id, starts_at: "2016-06-25 19:00:00").audiences << [couple_audience, group_audience, single_audience]
 

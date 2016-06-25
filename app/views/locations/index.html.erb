@@ -1,41 +1,52 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Locations</h1>
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="logo col-xs-12 col-sm-3 col-md-3">
+        <h1>
+          <a href="index.html" title="Happy Weekend">Happy Weekend</a>
+        </h1>
+      </div>
+      <button class="col-xs-12 col-sm-3 col-md-2 pull-right">
+        Set My Preferences
+      </button>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="common-block col-xs-12 col-sm-12 col-md-12">
+        <h2 class="heading col-xs-12 col-sm-12 col-md-12">Movies</h2>
+        <div class="listing">
+          <% @locations.all.each do |location| %>
+          <div class="grid big col-xs-12 col-sm-4 col-md-2">
+            <a href="#">
+              <div class="grid__image">
+                <img src="images/b.jpg" alt="poster">
+              </div>
+              <div class="grid__info">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Audience</th>
-      <th>Category</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>Opens at</th>
-      <th>Closes at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+                  <h3 class="grid__title"><%=location.name %></h3><p class="grid__location">
+                <% geo_localization = "#{location.latitude},#{location.longitude}" %>
+                <%   query = Geocoder.search(geo_localization).first %>
+                 <%=  query.address %></p>
 
-  <tbody>
-    <% @locations.each do |location| %>
-      <tr>
-        <td><%= location.name %></td>
-        <td><%= location.description %></td>
-        <td><%= location.audiences %></td>
-        <td><%= location.category %></td>
-        <td><%= location.latitude %></td>
-        <td><%= location.longitude %></td>
-        <td><%= location.opens_at %></td>
-        <td><%= location.closes_at %></td>
-        <td><%= link_to 'Show', location %></td>
-        <td><%= link_to 'Edit', edit_location_path(location) %></td>
-        <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+              </div>
+            </a>
+          </div>
+          <%end %>
 
-<br>
-
-<%= link_to 'New Location', new_location_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="container">
+    <div class="row">
+      <p>Footer</p>
+    </div>
+  </div>
+</footer>

@@ -3,9 +3,11 @@
     <div class="row">
       <div class="logo col-xs-12 col-sm-3 col-md-3">
         <h1>
-          <a href="index.html" title="Happy Weekend">Happy Weekend</a>
+          <a href="<%= root_url %>" title="Happy Weekend">Happy Weekend</a>
         </h1>
       </div>
+      <%= link_to "Set My Preferences", preferences_path, class:"col-xs-12 col-sm-3 col-md-2 pull-right"   %>
+
     </div>
   </div>
 </header>
@@ -122,20 +124,24 @@
     <div class="common-block col-xs-12 col-sm-12 col-md-12">
       <h2 class="heading col-xs-12 col-sm-12 col-md-12">Outdoor</h2>
       <ul class="category">
-        <li class="grid animal">
-          <h3>Nature and Animals</h3>
-        </li>
-        <li class="grid sports"><h3>Nature &amp; Animals</h3></li>
-        <li class="grid kids"><h3>Kids Entertainment</h3></li>
-        <li class="grid dining"><h3>Eating &amp; Dining</h3></li>
-        <li class="grid heritage"><h3>Culture &amp; Heritage</h3></li>
-        <li class="grid museum"><h3>Museum</h3></li>
-        <li class="grid hiking"><h3>Hiking</h3></li>
-        <li class="grid theatre"><h3>Theatre</h3></li>
-        <li class="grid concert"><h3>Concert</h3></li>
-        <li class="grid karaoke"><h3>Karaoke</h3></li>
-        <li class="grid cinema"><h3>Cinema</h3></li>
-        <li class="grid shopping"><h3>Shopping</h3></li>
+        <% Category.all.drop(3).each do |category| %>
+          <li class="grid <%= category.css_class %>"> <h3><%= link_to category.name, locations_path(category_id: category.id) %></h3>
+          </li>
+        <%end %>
+        <!--<li class="grid animal">-->
+          <!--<h3>Nature and Animals</h3>-->
+        <!--</li>-->
+        <!--<li class="grid sports"><h3>Nature &amp; Animals</h3></li>-->
+        <!--<li class="grid kids"><h3>Kids Entertainment</h3></li>-->
+        <!--<li class="grid dining"><h3>Eating &amp; Dining</h3></li>-->
+        <!--<li class="grid heritage"><h3>Culture &amp; Heritage</h3></li>-->
+        <!--<li class="grid museum"><h3>Museum</h3></li>-->
+        <!--<li class="grid hiking"><h3>Hiking</h3></li>-->
+        <!--<li class="grid theatre"><h3>Theatre</h3></li>-->
+        <!--<li class="grid concert"><h3>Concert</h3></li>-->
+        <!--<li class="grid karaoke"><h3>Karaoke</h3></li>-->
+        <!--<li class="grid cinema"><h3>Cinema</h3></li>-->
+        <!--<li class="grid shopping"><h3>Shopping</h3></li>-->
       </ul>
     </div>
     <div class="common-block col-xs-12 col-sm-12 col-md-12">
