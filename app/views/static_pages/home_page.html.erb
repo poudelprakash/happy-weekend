@@ -17,12 +17,14 @@
       <div class="common-block col-xs-12 col-sm-12 col-md-12">
         <h2 class="heading col-xs-12 col-sm-12 col-md-12">Featured Recommendations</h2>
         <div class="featured">
-          <% @recommendations.each do |location| %>
+          <% images = ['d.jpg', 'b.jpg', 'c.jpg'] %>
+          <% @recommendations.each_with_index do |location, index| %>
+
 
         <div class="grid big col-xs-12 col-sm-12 col-md-4">
             <!--<a href="#">-->
               <div class="grid__image">
-                <%= image_tag('d.jpg') %>
+                <%= image_tag(images[index]) %>
               </div>
               <div class="grid__info">
 

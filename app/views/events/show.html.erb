@@ -23,15 +23,15 @@
           <div class="grid big col-xs-12 col-sm-12 col-md-12">
             <div class="grid__image col-md-4">
               <div class="row">
-                <img src="<%= @event.images %>" alt="poster">
+                <%= image_tag('a.jpg') %>
               </div>
             </div>
             <div class="grid__info col-md-7">
               <p class="grid__location">  <%= @address %></p>
               <p class="grid__desc"><%= @event.description %></p>
               <!--<p>Audience:, <a href="#">Teams</a></p>-->
-              <p>Opens at: <span>  <%= @event.opens_at%></span> and
-                Closes at: <span>  <%= @event.closes_at%></span></p>
+              <% if @event.opens_at %><p>Opens at: <span>  <%= @event.opens_at%></span></p> <% end %>
+                <% if @event.closes_at %><p> Closes at: <span>  <%= @event.closes_at%></span></p> <% end %>
             </div>
           </div>
         </div>
