@@ -153,6 +153,7 @@ Location.create(name: " National Art Museum", description:'', category_id: kids.
 Location.create(name: "Narayanhiti palace museum", description:'', category_id: kids.id, latitude:27.7179483 , longitude:85.3163709 , opens_at: '11 am', closes_at: '').audiences << [kids_audience, family_audience, group_audience, single_audience]
 
 
+
 #Events
 
 Event.create(name: "BAC Mela (Open Air Flea Market)", description:"On Saturday 25th June, 2016 the Bikalpa Art Center (BAC)/ BAC ART CAFE will turn into a Festive Mela place again the BAC's Monthly Market. The Mela will showcase i.) Made in Nepal products ii.) Local food and drinks and iii.) Second hand garage sale.
@@ -176,6 +177,20 @@ Ticket price: Rs. 1000/-
 
 http://www.femnepal.com/news/live-musical-era-2016season-5/", category_id: sports.id, starts_at: "2016-06-25 19:00:00").audiences << [couple_audience, group_audience, single_audience]
 
+
+#Cinema
+
+Location.create(name: "QFX, Civil Mall", description:'Watch the latest movies in the town!', category_id: cinema.id, latitude:27.6993664, longitude:85.3102312, opens_at: '8 am', closes_at: '11 pm').audiences << [kids_audience, family_audience, group_audience, single_audience,family_audience]
+
+Location.create(name: "QFX, Labim Mall", description:'Watch the latest movies in the town!', category_id: cinema.id, latitude:27.6773335, longitude:85.3169703, opens_at: '8 am', closes_at: '11 pm').audiences << [kids_audience, family_audience, group_audience, single_audience,family_audience]
+
+Location.create(name: "QFX, Kumari Hall", description:'Watch the latest movies in the town!', category_id: cinema.id, latitude:27.7090157, longitude:85.3231044, opens_at: '8 am', closes_at: '').audiences << [kids_audience, family_audience, group_audience, single_audience,family_audience]
+
+Location.create(name: "QFX, Jai Nepal Hall", description:'Watch the latest movies in the town!', category_id: cinema.id, latitude:27.7136845, longitude:85.3195137, opens_at: '-', closes_at: '-').audiences << [kids_audience, family_audience, group_audience, single_audience,family_audience]
+
+Location.create(name: "Big Movies", description:'Watch the latest movies in the town!', category_id: cinema.id, latitude:27.7097105, longitude:85.324455, opens_at: '8 am', closes_at: '7 pm').audiences << [kids_audience, family_audience, group_audience, single_audience,family_audience]
+
+Location.create(name: "FCube Cinemas", description:'Watch the latest movies in the town!', category_id: cinema.id, latitude:27.71822, longitude:85.3477433, opens_at: '10 am', closes_at: '8 pm').audiences << [kids_audience, family_audience, group_audience, single_audience,family_audience]
 
 
 # indoor activities
