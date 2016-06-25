@@ -5,6 +5,10 @@ assets:environment
 assets:precompile
 cache_digests:dependencies
 cache_digests:nested_dependencies
+cloudinary:sync_static
+crawl_events:all
+crawl_events:events_in_nepal
+crawl_events:facebook
 db:create
 db:drop
 db:fixtures:load
