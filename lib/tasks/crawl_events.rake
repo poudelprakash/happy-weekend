@@ -95,7 +95,11 @@ namespace :crawl_events do
       movie_description = parsed_page.css('.plot_summary .summary_text').text.gsub("\n","").strip
       movie_description = "IMDB Rating: " + movie_rating + "\n\n"+ movie_description + "\n\nIMDB Link:" + link 
       
-      IndoorActivity.create(name: movie_title, description: , category_id: movies.id).audiences << [single_audience, couple_audience]
+      activity = IndoorActivity.create(name: movie_title, description: , category_id: movies.id).audiences << [single_audience, couple_audience]
+      
+      parsed_page.css('.slate_wrapper .poster img').first.attributes['src'].value
+      img = activity.images.build(name:"Movie Image")
+      img.remote_source_url = parsed_page.css('.slate_wrapper .poster img').first.attributes['src'].value
     end
     
   end

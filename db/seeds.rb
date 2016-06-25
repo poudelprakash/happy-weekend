@@ -178,11 +178,6 @@ http://www.femnepal.com/news/live-musical-era-2016season-5/", category_id: sport
 
 
 
-
-# outdoor activities
-
-
-
 # indoor activities
 book = IndoorActivity.create(name: "Alchemist", description: "The Alchemist (Portuguese: O Alquimista) is a novel by Brazilian author Paulo Coelho first published in 1988. Originally written in Portuguese, it has been translated into at least 67 languages as of October 2009. An allegorical novel, The Alchemist follows a young Andalusian shepherd named Santiago in his journey to Egypt, after having a recurring dream of finding treasure there.", category_id: books.id).audiences << [single_audience]
 
