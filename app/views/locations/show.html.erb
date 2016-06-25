@@ -8,9 +8,7 @@
           <a href="<%= root_url %>" title="Happy Weekend">Happy Weekend</a>
         </h1>
       </div>
-      <button class="col-xs-12 col-sm-3 col-md-2 pull-right">
-        Set My Preferences
-      </button>
+      <%= link_to "Set My Preferences", preferences_path, class:"col-xs-12 col-sm-3 col-md-2 pull-right"   %>
     </div>
   </div>
 </header>
@@ -57,5 +55,3 @@
   </div>
 </footer>
 
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>

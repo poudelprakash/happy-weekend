@@ -25,7 +25,12 @@
           <div class="grid big col-xs-12 col-sm-4 col-md-2">
             <%= link_to(location) do %>
               <div class="grid__image">
-                <%= image_tag('a.jpg') %>
+                <% if location.images.first %>
+                  <%= image_tag(location.images.first.source) %>
+                  <% else %>
+                  <%= image_tag ("a.jpg") %>
+
+              <%end%>
               </div>
               <div class="grid__info">
 
@@ -49,7 +54,10 @@
             <div class="grid big col-xs-12 col-sm-4 col-md-2">
               <%= link_to(location) do %>
                 <div class="grid__image">
-                  <%= image_tag('a.jpg') %>
+                  <% if location.images.first %>
+                    <%= image_tag(location.images.first.source) %>
+                  <%end%>
+                  <%= image_tag ("a.jpg") %>
                 </div>
                 <div class="grid__info">
 

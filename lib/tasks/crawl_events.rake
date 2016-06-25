@@ -101,7 +101,7 @@ namespace :crawl_events do
       activity = IndoorActivity.create(name: movie_title, description: movie_description, category_id: Category.find_by_name('Movies and Series').id)
       activity.audiences << [single_audience, couple_audience]
       begin
-      image = parsed_page.css('.slate_wrapper .poster img').first.attributes['src'].value
+      image = parsed_page.css('.poster img').first.attributes['src'].value
       rescue
         image = image || 'https://leadof5.files.wordpress.com/2014/10/zoo.jpg'
       end

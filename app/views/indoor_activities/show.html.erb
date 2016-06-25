@@ -1,19 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @indoor_activity.name %>
-</p>
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="logo col-xs-12 col-sm-3 col-md-3">
+        <h1>
+          <a href="<%= root_url %>" title="Happy Weekend">Happy Weekend</a>
+        </h1>
+      </div>
+      <%= link_to "Set My Preferences", preferences_path, class:"col-xs-12 col-sm-3 col-md-2 pull-right"   %>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="common-block col-xs-12 col-sm-12 col-md-12">
+        <h2 class="heading col-xs-12 col-sm-12 col-md-12"><%= @indoor_activity.name %></h2>
+        <div class="detail">
+          <div class="grid big col-xs-12 col-sm-12 col-md-12">
+            <div class="grid__image col-md-2">
+              <div class="row">
+                <%= image_tag(@indoor_activity.images.first.source) %>
+              </div>
+            </div>
+            <div class="grid__info col-md-7">
+              <p class="grid__desc"><%= @indoor_activity.description %></p>
+              <!--<p>Audience:, <a href="#">Teams</a></p>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="container">
+    <div class="row">
+      <p>Footer</p>
+    </div>
+  </div>
+</footer>
 
-<p>
-  <strong>Description:</strong>
-  <%= @indoor_activity.description %>
-</p>
-
-<p>
-  <strong>Release date:</strong>
-  <%= @indoor_activity.release_date %>
-</p>
-
-<%= link_to 'Edit', edit_indoor_activity_path(@indoor_activity) %> |
-<%= link_to 'Back', indoor_activities_path %>

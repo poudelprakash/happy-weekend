@@ -4,7 +4,7 @@ class IndoorActivitiesController < ApplicationController
   # GET /indoor_activities
   # GET /indoor_activities.json
   def index
-    @indoor_activities = IndoorActivity.all
+    @indoor_activities = IndoorActivity.where(category_id:2)
   end
 
   # GET /indoor_activities/1

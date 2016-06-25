@@ -1,31 +1,58 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Indoor Activities</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Release date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="logo col-xs-12 col-sm-3 col-md-3">
+        <h1>
+          <a href="<%= root_url %>" title="Happy Weekend">Happy Weekend</a>
+        </h1>
+      </div>
+      <%= link_to "Set My Preferences", preferences_path, class:"col-xs-12 col-sm-3 col-md-2 pull-right"   %>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="common-block col-xs-12 col-sm-12 col-md-12">
+        <h2 class="heading col-xs-12 col-sm-12 col-md-12">Locations</h2>
+        <% if @indoor_activities.empty? %>
+          <p>Sorry! no events match your preferences</p>
+        <%end %>
+        <div class="listing">
+          <% @indoor_activities.each do |indoor_activity| %>
+            <div class="grid big col-xs-12 col-sm-4 col-md-2">
+              <%= link_to(indoor_activity) do %>
+                <div class="grid__image">
+                  <% if indoor_activity.images.first %>
+                    <%= image_tag(indoor_activity.images.first.source) %>
+                  <% else %>
+                    <%= image_tag ("cinema.jpg") %>
 
-  <tbody>
-    <% @indoor_activities.each do |indoor_activity| %>
-      <tr>
-        <td><%= indoor_activity.name %></td>
-        <td><%= indoor_activity.description %></td>
-        <td><%= indoor_activity.release_date %></td>
-        <td><%= link_to 'Show', indoor_activity %></td>
-        <td><%= link_to 'Edit', edit_indoor_activity_path(indoor_activity) %></td>
-        <td><%= link_to 'Destroy', indoor_activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+                  <%end%>
+                </div>
+                <div class="grid__info">
 
-<br>
+                  <h3 class="grid__title"><%=indoor_activity.name %></h3>
 
-<%= link_to 'New Indoor activity', new_indoor_activity_path %>
+                </div>
+              <%end %>
+            </div>
+          <%end %>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="container">
+    <div class="row">
+      <p>Footer</p>
+    </div>
+  </div>
+</footer>
+
