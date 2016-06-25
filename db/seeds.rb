@@ -184,11 +184,29 @@ http://www.femnepal.com/news/live-musical-era-2016season-5/", category_id: sport
 
 
 # indoor activities
-alchemist = IndoorActivity.create(name: "Alchemist",
-                                  release_date: Date.today,
-                                  description: "The Alchemist (Portuguese: O Alquimista) is a novel by Brazilian author Paulo Coelho first published in 1988. Originally written in Portuguese, it has been translated into at least 67 languages as of October 2009. An allegorical novel, The Alchemist follows a young Andalusian shepherd named Santiago in his journey to Egypt, after having a recurring dream of finding treasure there.")
+book = IndoorActivity.create(name: "Alchemist", description: "The Alchemist (Portuguese: O Alquimista) is a novel by Brazilian author Paulo Coelho first published in 1988. Originally written in Portuguese, it has been translated into at least 67 languages as of October 2009. An allegorical novel, The Alchemist follows a young Andalusian shepherd named Santiago in his journey to Egypt, after having a recurring dream of finding treasure there.", category_id: books.id).audiences << [single_audience]
 
-alchemist.categories << books
-alchemist.audiences << single_audience
 
+book = IndoorActivity.create(name: "To Kill a Mockingbird",release_date: '1960', description: "The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it, To Kill A Mockingbird became both an instant bestseller and a critical success when it was first published in 1960. It went on to win the Pulitzer Prize in 1961 and was later made into an Academy Award-winning film, also a classic.", category_id: books.id).audiences << [single_audience]
+                                  
+book = IndoorActivity.create(name: "The Catcher in the Rye", description: "Since his debut in 1951 as The Catcher in the Rye, Holden Caulfield has been synonymous with 'cynical adolescent.' Holden narrates the story of a couple of days in his sixteen-year-old life, just after he's been expelled from prep school, in a slang that sounds edgy even today and keeps this novel on banned book lists. His constant wry observations about what he encounters, from teachers to phonies (the two of course are not mutually exclusive) capture the essence of the eternal teenage experience of alienation.", category_id: books.id).audiences << [single_audience]
+
+book = IndoorActivity.create(name: "Catch-22",description: "At the heart of Catch-22 resides the incomparable, malingering bombardier, Yossarian, a hero endlessly inventive in his schemes to save his skin from the horrible chances of war.", category_id: books.id).audiences << [single_audience]
+
+book = IndoorActivity.create(name: "Watchmen",description: "This Hugo Award-winning graphic novel chronicles the fall from grace of a group of super-heroes plagued by all-too-human failings. Along the way, the concept of the super-hero is dissected as the heroes are stalked by an unknown assassin.
+", category_id: books.id).audiences << [single_audience]
+
+
+video_game = IndoorActivity.create(name: "Dark Souls 3",description: "Dark Souls III is an action role-playing video game developed by FromSoftware and published by Bandai Namco Entertainment for PlayStation 4, Xbox One, and Microsoft Windows.", category_id: video_games.id).audiences << [single_audience]
+
+video_game = IndoorActivity.create(name: "Far Cry Primal",description: "Far Cry Primal is an action-adventure video game developed by Ubisoft Montreal and published by Ubisoft. It was released for the PlayStation 4, Xbox One, and Microsoft Windows in 2016. Wikipedia
+", category_id: video_games.id).audiences << [single_audience]
+
+video_game = IndoorActivity.create(name: "X Com 2",description: "XCOM 2 is a turn-based tactics video game developed by Firaxis Games and published by 2K Games. It was released for Microsoft Windows, OS X, and Linux on February 5, 2016, and will be released for PlayStation 4 and Xbox One in September 2016.", category_id: video_games.id).audiences << [single_audience]
+
+video_game = IndoorActivity.create(name: "Counter Strike: Global Offensive",description: "Counter-Strike: Global Offensive is an online first-person shooter video game developed by Hidden Path Entertainment and Valve Corporation. It is the fourth game in the main Counter-Strike franchise.", category_id: video_games.id).audiences << [group_audience]
+
+video_game = IndoorActivity.create(name: "Skyrim",description: "The Elder Scrolls V: Skyrim is an open world action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks. It is the fifth installment in The Elder Scrolls series, following The Elder Scrolls IV: Oblivion", category_id: video_games.id).audiences << [single_audience]
+                                                                           
+                                                                    
 

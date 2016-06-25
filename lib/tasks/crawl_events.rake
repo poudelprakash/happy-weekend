@@ -17,7 +17,7 @@ namespace :crawl_events do
     p next_weekend
   end
 
-  desc "TODO"
+  desc "events from eventinnepal"
   task events_in_nepal: :environment do
     p "fetching data from events in nepal"
     
@@ -70,6 +70,34 @@ namespace :crawl_events do
   end
   
   
-  
+  desc "Top 250 movies"
+  task imdb_movies: :environment do
+    SITE="http://www.imdb.com/chart/top"
+    BASE = "http://www.imdb.com/"
+    
+    page = HTTParty.get(SITE)
+
+    parse_page = Nokogiri::HTML(page)
+    
+    link_arr = []
+    parse_page.css('.titleColumn a').each do |movie_node|
+      link = BASE+movie_node.attributes['href'].value
+      link = link.gsub(/\?.*/,'')
+      link_arr << link
+    end
+    
+    link_arr.each do |link|
+      page = HTTParty.get(link)
+      parsed_page = Nokogiri::HTML(page)
+      
+      movie_rating = parsed_page.css('.ratingValue strong').text+"/10"
+      movie_title = parsed_page.css('.titleBar .title_wrapper h1').text
+      movie_description = parsed_page.css('.plot_summary .summary_text').text.gsub("\n","").strip
+      movie_description = "IMDB Rating: " + movie_rating + "\n\n"+ movie_description + "\n\nIMDB Link:" + link 
+      
+      IndoorActivity.create(name: movie_title, description: , category_id: movies.id).audiences << [single_audience, couple_audience]
+    end
+    
+  end
 
 end
