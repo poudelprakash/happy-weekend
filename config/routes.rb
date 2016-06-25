@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :events
   resources :indoor_activities
   resources :preferences
+  get 'dashboard' => 'preferences#dashboard'
   get 'static_pages/home_page'
   root 'static_pages#home_page'
 
