@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'locations/category/:id' => 'catalog#purchase', as: :purchase
   resources :events
   resources :indoor_activities
+  resources :preferences
   get 'static_pages/home_page'
   root 'static_pages#home_page'
 
