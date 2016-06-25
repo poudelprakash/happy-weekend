@@ -106,8 +106,7 @@ namespace :crawl_events do
         image = image || 'https://leadof5.files.wordpress.com/2014/10/zoo.jpg'
       end
 
-      img = activity.images.build(name: movie_title)
-      img.remote_source_url = image
+      activity.images << Image.create(source: image)
       activity.save
       puts movie_title
 
