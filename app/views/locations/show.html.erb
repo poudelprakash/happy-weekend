@@ -1,44 +1,63 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @location.name %>
-</p>
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="logo col-xs-12 col-sm-3 col-md-3">
+        <h1>
+          <a href="<%= root_url %>" title="Happy Weekend">Happy Weekend</a>
+        </h1>
+      </div>
+      <button class="col-xs-12 col-sm-3 col-md-2 pull-right">
+        Set My Preferences
+      </button>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="common-block col-xs-12 col-sm-12 col-md-12">
+        <h2 class="heading col-xs-12 col-sm-12 col-md-12"><%= @location.name %></h2>
+        <div class="detail">
+          <div class="grid big col-xs-12 col-sm-12 col-md-12">
+            <div class="grid__image col-md-4">
+              <div class="row">
+                <% byebug %>
+                <%= image_tag(@location.images) %>
+                <!--<img src="<%= @location.images %>" alt="poster">-->
+              </div>
+            </div>
+            <div class="grid__info col-md-7">
+              <p class="grid__location">  <%= @address %></p>
+              <p class="grid__desc"><%= @location.description %></p>
+              <!--<p>Audience:, <a href="#">Teams</a></p>-->
+              <% if @location.opens_at %> <p>Opens at: <span>  <%= @location.opens_at.to_formatted_s(:time) %></span> </p> <% end %>
+              <% if @location.closes_at %> <p> Closes at: <span>  <%= @location.closes_at.to_formatted_s(:time) %></span></p> <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--<div class="sign-up-block">-->
+        <!--<h2>SIGN UP</h2>-->
+        <!--<form action="#">-->
+          <!--<input type="text" placeholder="Username">-->
+          <!--<input type="password" placeholder="Password">-->
+          <!--<input type="checkbox">Remember Me-->
+          <!--<input type="submit" value="SIGN UP">-->
+        <!--</form>-->
 
-<p>
-  <strong>Description:</strong>
-  <%= @location.description %>
-</p>
-
-<p>
-  <strong>Audience:</strong>
-  <%= @location.audience %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @location.category %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @location.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @location.longitude %>
-</p>
-
-<p>
-  <strong>Opens at:</strong>
-  <%= @location.opens_at.to_formatted_s(:time) %>
-</p>
-
-<p>
-  <strong>Closes at:</strong>
-  <%= @location.closes_at.to_formatted_s(:time) %>
-</p>
+      <!--</div>-->
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="container">
+    <div class="row">
+      <p>Footer</p>
+    </div>
+  </div>
+</footer>
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>

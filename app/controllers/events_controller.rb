@@ -10,6 +10,9 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    geo_localization = "#{event.latitude},#{@event.longitude}"
+    query = Geocoder.search(geo_localization).first
+    @address = query.address
   end
 
   # GET /events/new

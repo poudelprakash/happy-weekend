@@ -5,11 +5,15 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations =  Location.where(category_id: params[:category_id])
+    @events = Event.where(category_id: params[:category_id])
   end
 
   # GET /locations/1
   # GET /locations/1.json
   def show
+    geo_localization = "#{@location.latitude},#{@location.longitude}"
+    query = Geocoder.search(geo_localization).first
+    @address = query.address
   end
 
   # GET /locations/new

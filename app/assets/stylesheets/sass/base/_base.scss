@@ -78,8 +78,12 @@ button{
 	background: none;
 	border: 1px solid $default-gray;
 	border-radius: 20px;
-	padding: 8px;
-	color: $color-text;
+	padding: 10px;
+	color: $asphalt;
 	font-size: rem(12px);
-	margin-top: rem(20px);
+	&:hover{
+		color: $asphalt;
+		border: 1px solid $asphalt;
+		transition: all 0.3s ease-in-out;
+	}
 }

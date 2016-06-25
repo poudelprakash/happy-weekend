@@ -20,9 +20,9 @@ namespace :crawl_events do
   desc "events from eventinnepal"
   task events_in_nepal: :environment do
     p "fetching data from events in nepal"
-    
+
     SITE="http://www.eventsinnepal.com/this-months-events"
-    
+
     page = HTTParty.get(SITE)
 
     parse_page = Nokogiri::HTML(page)
@@ -47,61 +47,72 @@ namespace :crawl_events do
         event_time = event_time || ''
         event_venue = event_venue || ''
       end
-      
+
       event_description = parsed_detail_page.css('#articleDesc').inner_text
-      
+
       parse_more_info = parsed_detail_page.css('.rdContent p a')
-     
+
       event_info = ''
       if(parse_more_info.children[1])
         event_info = parse_more_info.children[1].text
-      end  
-      
+      end
+
       event_description += "\n\nTiming: " + event_time + "\n\nLocation: " + event_venue + "\n\n" + "Link: "+ event_info
       events_array << [event_title, event_description]
     end
-    
+
     puts events_array
-    
-    
+
+
     events_array.each do |event|
-        Event.create(name: event.event_title, description:event.event_description, category_id: Category.find_by_name('Nature and Animals').id)
+        Event.create(name: event[0], description:event[1], category_id: Category.find_by_name('Nature and Animals').id)
     end
   end
-  
-  
+
+
   desc "Top 250 movies"
   task imdb_movies: :environment do
+    puts 'fetching movies'
     SITE="http://www.imdb.com/chart/top"
     BASE = "http://www.imdb.com/"
-    
+
     page = HTTParty.get(SITE)
 
     parse_page = Nokogiri::HTML(page)
-    
+
     link_arr = []
     parse_page.css('.titleColumn a').each do |movie_node|
       link = BASE+movie_node.attributes['href'].value
       link = link.gsub(/\?.*/,'')
       link_arr << link
     end
-    
+# audiences
+    single_audience = Audience.find_by_name('Single')
+    couple_audience = Audience.find_by_name('Couple')
     link_arr.each do |link|
       page = HTTParty.get(link)
       parsed_page = Nokogiri::HTML(page)
-      
+
       movie_rating = parsed_page.css('.ratingValue strong').text+"/10"
       movie_title = parsed_page.css('.titleBar .title_wrapper h1').text
       movie_description = parsed_page.css('.plot_summary .summary_text').text.gsub("\n","").strip
-      movie_description = "IMDB Rating: " + movie_rating + "\n\n"+ movie_description + "\n\nIMDB Link:" + link 
-      
-      activity = IndoorActivity.create(name: movie_title, description: , category_id: movies.id).audiences << [single_audience, couple_audience]
-      
-      parsed_page.css('.slate_wrapper .poster img').first.attributes['src'].value
-      img = activity.images.build(name:"Movie Image")
-      img.remote_source_url = parsed_page.css('.slate_wrapper .poster img').first.attributes['src'].value
+      movie_description = "IMDB Rating: " + movie_rating + "\n\n"+ movie_description + "\n\nIMDB Link:" + link
+
+      activity = IndoorActivity.create(name: movie_title, description: movie_description, category_id: Category.find_by_name('Movies and Series').id)
+      activity.audiences << [single_audience, couple_audience]
+      begin
+      image = parsed_page.css('.slate_wrapper .poster img').first.attributes['src'].value
+      rescue
+        image = image || 'https://leadof5.files.wordpress.com/2014/10/zoo.jpg'
+      end
+
+      img = activity.images.build(name: movie_title)
+      img.remote_source_url = image
+      activity.save
+      puts movie_title
+
     end
-    
+
   end
 
 end

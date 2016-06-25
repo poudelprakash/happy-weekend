@@ -28,7 +28,7 @@
 		color: $color-link;
 	}
 }
-.featured{
+%featured{
 	.heading{
 		font-size: rem(24px);
 	}
@@ -47,9 +47,25 @@
 		}
 	}
 }
+.featured{
+	@extend %featured;
+}
+.detail{
+	@extend %featured;
+	.grid{
+		text-align: left;
+		p{
+			margin-bottom: 10px;
+		}
+		a{
+			display: inline-block;
+		}
+	}
+}
 .category{
 	text-align: center;
 	.grid{
+		@extend %shadow;
 		display: inline-block;
 		width: 340px;
 		height: 220px;
@@ -94,19 +110,100 @@
 			background: image-url('karaoke.jpg') no-repeat center center;
 			background-size:cover;
 		}
-		&.cinema{
-			background: image-url('cinema.jpg') no-repeat center center;
+		&.movie{
+			background: image-url('movie.jpg') no-repeat center center;
 			background-size:cover;
 		}
 		&.shopping{
 			background: image-url('shopping.jpg') no-repeat center center;
 			background-size:cover;
 		}
-		h3{
-			color: transparentize($white, 0.1);
-			margin-top: 95px;
-			font-size: rem(28px);
-			text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+		&.cinema{
+			background: image-url('cinema.jpg') no-repeat center center;
+			background-size:cover;
 		}
+		&.book{
+			background: image-url('book.jpg') no-repeat center center;
+			background-size:cover;
+		}
+		&.game{
+			background: image-url('game.jpg') no-repeat center center;
+			background-size:cover;
+		}
+		h3{
+          color: transparentize($white, 0.1);
+          text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+          font-size: rem(28px);
+          a{
+            color: transparentize($white, 0.1);
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+            font-size: rem(28px);
+          }
+          margin-top: 95px;
+		}
+	}
+}
+//Preferences Page
+.info-box{
+	padding: 10px;
+	background: lighten($primary-color,40%);
+	border-radius: 1px;
+	margin-bottom: 20px;
+}
+label{
+	width: 100%;
+	margin-bottom: 5px;
+	font-size: rem(16px);
+}
+form{
+	p{
+		margin-bottom: 20px;
+		font-size: rem(14px);
+		span{
+			margin-right: 5px;
+		}
+	}
+}
+input, select{
+	font-size: rem(14px);
+	width: 300px;
+	border: 1px solid $asphalt;
+	padding: 5px 8px;
+}
+input[type="checkbox"], input[type="radio"]{
+	width: auto;
+	float: left;
+	margin-right: 5px;
+}
+input[type="submit"]{
+	background: $primary-color;
+	color: $white;
+	width: auto;
+	border: none;
+	padding: 10px;
+}
+//Listing Page
+.listing{
+	.grid{
+      height: 400px;
+      overflow: hidden;
+		@include e(image){
+			height: 240px;
+		}
+	}
+}
+.sign-up-block{
+	width: 330px;
+	padding: 15px;
+	h2{
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	input{
+		margin-bottom: 20px;
+	}
+	input[type="submit"]{
+		width: 100%;
+		margin-bottom: 0;
 	}
 }

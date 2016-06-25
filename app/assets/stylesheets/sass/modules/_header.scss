@@ -9,6 +9,10 @@ header{
 		}
 	}
 	h1{
-		font-size: rem(18px);
+		font-size: rem(20px);
+		line-height: rem(32px);
+	}
+	button{
+		color: $white;
 	}
 }

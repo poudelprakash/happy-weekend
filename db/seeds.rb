@@ -22,7 +22,7 @@ books = Category.create(name: 'Books', css_class: 'kids')
 nature = Category.create(name: 'Nature and Animals', css_class: 'animal')
 sports = Category.create(name: 'Sports', css_class: 'sports')
 eating = Category.create(name: 'Eating and Dining', css_class: 'dining')
-heritage = Category.create(name: 'Religious places and cultural heritage', css_class: 'heritage')
+heritage = Category.create(name: 'Cultural Heritage', css_class: 'heritage')
 kids = Category.create(name: 'Kids Entertainment', css_class: 'kids')
 museums = Category.create(name: 'Museums', css_class: 'museum')
 hiking = Category.create(name: 'Hiking', css_class: 'hiking')
@@ -183,7 +183,7 @@ book = IndoorActivity.create(name: "Alchemist", description: "The Alchemist (Por
 
 
 book = IndoorActivity.create(name: "To Kill a Mockingbird",release_date: '1960', description: "The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it, To Kill A Mockingbird became both an instant bestseller and a critical success when it was first published in 1960. It went on to win the Pulitzer Prize in 1961 and was later made into an Academy Award-winning film, also a classic.", category_id: books.id).audiences << [single_audience]
-                                  
+
 book = IndoorActivity.create(name: "The Catcher in the Rye", description: "Since his debut in 1951 as The Catcher in the Rye, Holden Caulfield has been synonymous with 'cynical adolescent.' Holden narrates the story of a couple of days in his sixteen-year-old life, just after he's been expelled from prep school, in a slang that sounds edgy even today and keeps this novel on banned book lists. His constant wry observations about what he encounters, from teachers to phonies (the two of course are not mutually exclusive) capture the essence of the eternal teenage experience of alienation.", category_id: books.id).audiences << [single_audience]
 
 book = IndoorActivity.create(name: "Catch-22",description: "At the heart of Catch-22 resides the incomparable, malingering bombardier, Yossarian, a hero endlessly inventive in his schemes to save his skin from the horrible chances of war.", category_id: books.id).audiences << [single_audience]
@@ -202,6 +202,6 @@ video_game = IndoorActivity.create(name: "X Com 2",description: "XCOM 2 is a tur
 video_game = IndoorActivity.create(name: "Counter Strike: Global Offensive",description: "Counter-Strike: Global Offensive is an online first-person shooter video game developed by Hidden Path Entertainment and Valve Corporation. It is the fourth game in the main Counter-Strike franchise.", category_id: video_games.id).audiences << [group_audience]
 
 video_game = IndoorActivity.create(name: "Skyrim",description: "The Elder Scrolls V: Skyrim is an open world action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks. It is the fifth installment in The Elder Scrolls series, following The Elder Scrolls IV: Oblivion", category_id: video_games.id).audiences << [single_audience]
-                                                                           
-                                                                    
+
+
 

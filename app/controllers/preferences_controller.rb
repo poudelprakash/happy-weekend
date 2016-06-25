@@ -6,7 +6,7 @@ class PreferencesController < ApplicationController
 
   def create
     # debugger
-    session[:audience_id] = params[:audience_id]
+    session[:audience_id] = params[:audience]
     session[:category_ids] = params[:category_ids]
     # audience = params[:audience]
     # category_ids = params[:category_ids]
@@ -15,9 +15,9 @@ class PreferencesController < ApplicationController
 
   def dashboard
     # @locations = Location.all
-    @locations = []
+    @locations = @Clocations = []
     # @events = Event.all
-    @events = []
+    @events = @Cevents = []
     # @indoor_activities = IndoorActivity.all
     @indoor_activities = []
 
@@ -39,8 +39,8 @@ class PreferencesController < ApplicationController
     end
     @locations = @locations.length > @Clocations.length ? @locations - @Clocations : @Clocations - @locations
 
-    if @locations.nil?
-      redirect_to dashboard_path
+    if @locations.empty?
+      redirect_to root_path
       flash[:notice] = "Your preferences doen't have any area of interest. Try something here"
     end
     # todo @prakash filter by categories

@@ -1,44 +1,61 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="logo col-xs-12 col-sm-3 col-md-3">
+        <h1>
+          <a href="<%= root_url %>" title="Happy Weekend">Happy Weekend</a>
+        </h1>
+      </div>
+      <button class="col-xs-12 col-sm-3 col-md-2 pull-right">
+        Set My Preferences
+      </button>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="common-block col-xs-12 col-sm-12 col-md-12">
+        <h2 class="heading col-xs-12 col-sm-12 col-md-12"><%= @event.name %></h2>
+        <div class="detail">
+          <div class="grid big col-xs-12 col-sm-12 col-md-12">
+            <div class="grid__image col-md-4">
+              <div class="row">
+                <img src="<%= @event.images %>" alt="poster">
+              </div>
+            </div>
+            <div class="grid__info col-md-7">
+              <p class="grid__location">  <%= @address %></p>
+              <p class="grid__desc"><%= @event.description %></p>
+              <!--<p>Audience:, <a href="#">Teams</a></p>-->
+              <p>Opens at: <span>  <%= @event.opens_at%></span> and
+                Closes at: <span>  <%= @event.closes_at%></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--<div class="sign-up-block">-->
+        <!--<h2>SIGN UP</h2>-->
+        <!--<form action="#">-->
+          <!--<input type="text" placeholder="Username">-->
+          <!--<input type="password" placeholder="Password">-->
+          <!--<input type="checkbox">Remember Me-->
+          <!--<input type="submit" value="SIGN UP">-->
+        <!--</form>-->
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+      <!--</div>-->
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="container">
+    <div class="row">
+      <p>Footer</p>
+    </div>
+  </div>
+</footer>
 
-<p>
-  <strong>Audience:</strong>
-  <%= @event.audience %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @event.category %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @event.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @event.longitude %>
-</p>
-
-<p>
-  <strong>Starts at:</strong>
-  <%= @event.starts_at %>
-</p>
-
-<p>
-  <strong>Ends at:</strong>
-  <%= @event.ends_at %>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>

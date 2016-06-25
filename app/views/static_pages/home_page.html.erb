@@ -17,42 +17,23 @@
       <div class="common-block col-xs-12 col-sm-12 col-md-12">
         <h2 class="heading col-xs-12 col-sm-12 col-md-12">Featured Recommendations</h2>
         <div class="featured">
-          <div class="grid big col-xs-12 col-sm-12 col-md-4">
-            <a href="#">
-              <div class="grid__image">
-                <%= image_tag('b.jpg') %>
-              </div>
-              <div class="grid__info">
-                <h3 class="grid__title">The Grey</h3>
-                <p class="grid__location">OFX Nepal, Civil Mall</p>
-                <p>Sundhara, Kathmandu</p>
-              </div>
-            </a>
-          </div>
-          <div class="grid big col-xs-12 col-sm-12 col-md-4">
-            <a href="#">
+          <% @recommendations.each do |location| %>
+
+        <div class="grid big col-xs-12 col-sm-12 col-md-4">
+            <!--<a href="#">-->
               <div class="grid__image">
                 <%= image_tag('d.jpg') %>
               </div>
               <div class="grid__info">
-                <h3 class="grid__title">The Martian</h3>
-                <p class="grid__location">OFX Nepal, Civil Mall</p>
-                <p>Sundhara, Kathmandu</p>
+
+                <h3 class="grid__title"><%= link_to location.name, location_path(location) %></h3>
+                <!--<p class="grid__location">OFX Nepal, Civil Mall</p>-->
+                <!--<p>Sundhara, Kathmandu</p>-->
               </div>
-            </a>
+            <!--</a>-->
           </div>
-          <div class="grid big col-xs-12 col-sm-12 col-md-4">
-            <a href="#">
-              <div class="grid__image">
-                <%= image_tag('c.jpg') %>
-              </div>
-              <div class="grid__info">
-                <h3 class="grid__title">Her</h3>
-                <p class="grid__location">OFX Nepal, Civil Mall</p>
-                <p>Sundhara, Kathmandu</p>
-              </div>
-            </a>
-          </div>
+          <%end %>
+
           <!-- 						<div class="grid small col-xs-12 col-sm-12 col-md-2">
                         <ul>
                           <li class="grid col-xs-12 col-sm-6 col-md-12">
@@ -128,20 +109,6 @@
           <li class="grid <%= category.css_class %>"> <h3><%= link_to category.name, locations_path(category_id: category.id) %></h3>
           </li>
         <%end %>
-        <!--<li class="grid animal">-->
-          <!--<h3>Nature and Animals</h3>-->
-        <!--</li>-->
-        <!--<li class="grid sports"><h3>Nature &amp; Animals</h3></li>-->
-        <!--<li class="grid kids"><h3>Kids Entertainment</h3></li>-->
-        <!--<li class="grid dining"><h3>Eating &amp; Dining</h3></li>-->
-        <!--<li class="grid heritage"><h3>Culture &amp; Heritage</h3></li>-->
-        <!--<li class="grid museum"><h3>Museum</h3></li>-->
-        <!--<li class="grid hiking"><h3>Hiking</h3></li>-->
-        <!--<li class="grid theatre"><h3>Theatre</h3></li>-->
-        <!--<li class="grid concert"><h3>Concert</h3></li>-->
-        <!--<li class="grid karaoke"><h3>Karaoke</h3></li>-->
-        <!--<li class="grid cinema"><h3>Cinema</h3></li>-->
-        <!--<li class="grid shopping"><h3>Shopping</h3></li>-->
       </ul>
     </div>
     <div class="common-block col-xs-12 col-sm-12 col-md-12">
